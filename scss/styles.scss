@@ -1,0 +1,22 @@
+$gray : #d3d3d3;
+$green : #75B975;
+$red : #FF00FF;
+
+.box {
+  background: $gray;
+  border: 3px solid black;
+  padding: 40px 80px;
+  .btn {
+    font-weight: bold;
+    text-align: center;
+    background: $green;
+    color: white;
+  }
+}
+
+.btn {
+  font-weight: bold;
+  text-align: center;
+  background: $green;
+  color: white;
+}
