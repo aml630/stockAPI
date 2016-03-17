@@ -3,6 +3,8 @@
  */
 
 var Markit = {};
+
+
 /**
 * Define the QuoteService.
 * First argument is symbol (string) for the quote. Examples: AAPL, MSFT, JNJ, GOOG.
@@ -45,6 +47,7 @@ Markit.QuoteService.prototype.makeRequest = function() {
 
 
 $(document).ready(function(){
+// new Markit.QuoteService("AAPL");
   $('#symbolSearch').submit(function(event){
     event.preventDefault();
     $(".result").html(" ");
@@ -53,7 +56,7 @@ $(document).ready(function(){
     new Markit.QuoteService(symbol, function(jsonResult){
     console.log(jsonResult);
     console.log(jsonResult.High);
-    $(".result").append("<li>" +jsonResult.Name + "</li>");
+    $(".result").append("<h3>" +jsonResult.Name + "</h3>");
     $(".result").append("<li>Current Price: " + jsonResult.LastPrice+ "</li>");
     $(".result").append("<li>Daily High: " + jsonResult.High+ "</li>");
     $(".result").append("<li>Daily Low: " + jsonResult.Low+ "</li>");
@@ -61,5 +64,3 @@ $(document).ready(function(){
   });
  });
 });
-
-export.QuoteServce = QuoteServce;

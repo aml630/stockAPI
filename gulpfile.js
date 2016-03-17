@@ -5,6 +5,7 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var utilities = require('gulp-util');
 var del = require('del');
+var Highcharts = require('highcharts/highstock');
 var jshint = require('gulp-jshint');
 var lib = require('bower-files')({
   "overrides":{
@@ -81,7 +82,7 @@ gulp.task('jshint', function(){
 var buildProduction = utilities.env.production;
 
 gulp.task('concatInterface', function() {
-  return gulp.src(['./js/stocks-interface.js', './js/stocks-request.js'])
+  return gulp.src(['./js/stocks-interface.js', './js/stock-request.js', './js/chart-interface.js'])
   .pipe(concat('allConcat.js'))
   .pipe(gulp.dest('./tmp'));
 });
